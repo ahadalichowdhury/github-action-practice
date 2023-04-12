@@ -1,0 +1,32 @@
+name: Testing 2
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: install dependences
+        run: npm ci
+      - name: lint
+        run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: install dependences
+        run: npm ci
+      - name: test Code 
+        run: npm run test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: install dependences
+        run: npm ci
+      - name: build Code
+        run: npm run build
+      - name: deploy Code
+        run: echo "deploying ....." 
